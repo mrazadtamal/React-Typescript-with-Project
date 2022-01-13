@@ -6,7 +6,7 @@ interface Props {
   setTodo: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const InputFile = ({ todo, setTodo }: Props) => {
+const InputFile: React.FC<Props> = ({ todo, setTodo }) => {
   return (
     <>
       <form className="input">
