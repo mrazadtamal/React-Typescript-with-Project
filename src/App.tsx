@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import InputFile from "./components/InputFile";
+import TodoList from "./components/TodoList";
 import { Todo } from "./model";
 
 const App: React.FC = () => {
@@ -23,9 +24,7 @@ const App: React.FC = () => {
     <div className="App">
       <div className="header">AZAD TODO</div>
       <InputFile todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-      {todos.map((t) => (
-        <li>{t.todo}</li>
-      ))}
+      <TodoList />
     </div>
   );
 };
