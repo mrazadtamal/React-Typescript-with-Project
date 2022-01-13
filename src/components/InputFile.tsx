@@ -2,9 +2,12 @@ import React from "react";
 
 const InputFile = () => {
   return (
-    <div>
-      <h1>azad</h1>
-    </div>
+    <>
+      <form className="input">
+        <input className="todoInput" type="text" placeholder="add todo" />
+        <button>Add</button>
+      </form>
+    </>
   );
 };
 
