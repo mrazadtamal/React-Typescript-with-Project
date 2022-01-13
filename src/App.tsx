@@ -1,11 +1,12 @@
 import React from "react";
-
 import "./App.css";
+import InputFile from "./components/InputFile";
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <div className="App">
-      <h1>azad</h1>
+      <div className="header">AZAD TODO</div>
+      <InputFile />
     </div>
   );
 };
