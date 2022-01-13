@@ -24,7 +24,7 @@ const App: React.FC = () => {
     <div className="App">
       <div className="header">AZAD TODO</div>
       <InputFile todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-      <TodoList />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 };
