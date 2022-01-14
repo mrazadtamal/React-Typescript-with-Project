@@ -44,18 +44,26 @@ const SingleTodo: React.FC<{
         <input
           value={editTodo}
           onChange={(e) => setEditTodo(e.target.value)}
-          className="todos__single--text"
+          className="todosText"
           ref={inputRef}
         />
       ) : todo.isDone ? (
-        <s className="todos__single--text">{todo.todo}</s>
+        <s className="todosText">{todo.todo}</s>
       ) : (
-        <span className="todos__single--text">{todo.todo}</span>
+        <span className="todosText">{todo.todo}</span>
       )}
       <div>
-        <span className="icon">
+        <span
+          className="icon"
+          onClick={() => {
+            if (!edit && !todo.isDone) {
+              setEdit(!edit);
+            }
+          }}
+        >
           <FiEdit />
         </span>
+
         <span
           className="icon"
           onClick={() => {
