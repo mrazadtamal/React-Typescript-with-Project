@@ -1,15 +1,15 @@
-import { type } from "os";
 import React from "react";
 import { Todo } from "../model";
-type Props = {
-  todo: Todo;
-};
 
-const SingleTodo = ({ todo, todos, setTodos }) => {
+const SingleTodo: React.FC<{
+  todo: Todo;
+  todos: Todo[];
+  setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
+}> = ({ todo, todos, setTodos }) => {
   return (
-    <div>
-      <h1>SingleTodo</h1>
-    </div>
+    <form className="todoSingle">
+      <span className="todosText">{todo.todo}</span>
+    </form>
   );
 };
 

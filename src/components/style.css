@@ -51,22 +51,23 @@
   flex-wrap: wrap;
 }
 
-.todos__single {
+.todoSingle {
   display: flex;
   width: 29.5%;
   border-radius: 5px;
   padding: 20px;
   margin-top: 15px;
-  background-image: url("https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg");
+  background-color: #a6ca25;
+  /* background-image: url(""); */
 }
-.todos__single--text {
+.todosText {
   flex: 1;
   padding: 5px;
   border: none;
   font-size: 20px;
 }
 
-.todos__single--text:focus {
+.todosText:focus {
   outline: none;
 }
 
@@ -77,7 +78,7 @@
 }
 
 @media (max-width: 1200px) {
-  .todos__single {
+  .todoSingle {
     width: 40%;
   }
 }
@@ -89,7 +90,7 @@
   .todos {
     width: 95%;
   }
-  .todos__single {
+  .todoSingle {
     width: 100%;
   }
 }
