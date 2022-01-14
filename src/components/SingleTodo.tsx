@@ -1,5 +1,7 @@
 import React from "react";
 import { Todo } from "../model";
+import { FiEdit } from "react-icons/fi";
+import { AiOutlineDelete } from "react-icons/ai";
 
 const SingleTodo: React.FC<{
   todo: Todo;
@@ -9,6 +11,14 @@ const SingleTodo: React.FC<{
   return (
     <form className="todoSingle">
       <span className="todosText">{todo.todo}</span>
+      <div>
+        <span className="icon">
+          <FiEdit />
+        </span>
+        <span className="icon">
+          <AiOutlineDelete />
+        </span>
+      </div>
     </form>
   );
 };
