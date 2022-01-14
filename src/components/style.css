@@ -1,8 +1,16 @@
 .input {
   display: flex;
-  width: 90%;
+  width: 95%;
   position: relative;
   align-items: center;
+}
+
+.container {
+  display: flex;
+  margin-top: 10px;
+  width: 95%;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .todoInput {
