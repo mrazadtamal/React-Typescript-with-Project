@@ -10,6 +10,14 @@ const SingleTodo: React.FC<{
   todos: Todo[];
   setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 }> = ({ todo, todos, setTodos }) => {
+  const handleDone = (id: number) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
+      )
+    );
+  };
+
   return (
     <form className="todoSingle">
       <span className="todosText">{todo.todo}</span>
@@ -20,7 +28,12 @@ const SingleTodo: React.FC<{
         <span className="icon">
           <AiOutlineDelete />
         </span>
-        <span className="icon">
+        <span
+          className="icon"
+          onClick={() => {
+            handleDone(todo.id);
+          }}
+        >
           <MdOutlineCloudDone />
         </span>
       </div>
