@@ -2,6 +2,8 @@ import React from "react";
 import { Todo } from "../model";
 import { FiEdit } from "react-icons/fi";
 import { AiOutlineDelete } from "react-icons/ai";
+import { MdOutlineCloudDone } from "react-icons/md";
+import "./style.css";
 
 const SingleTodo: React.FC<{
   todo: Todo;
@@ -17,6 +19,9 @@ const SingleTodo: React.FC<{
         </span>
         <span className="icon">
           <AiOutlineDelete />
+        </span>
+        <span className="icon">
+          <MdOutlineCloudDone />
         </span>
       </div>
     </form>
