@@ -1,7 +1,7 @@
 import React from "react";
 import { Todo } from "../model";
 import SingleTodo from "./SingleTodo";
-import { Droppable } from "react-beautiful-dnd";
+// import { Droppable } from "react-beautiful-dnd";
 import "./style.css";
 
 interface props {
