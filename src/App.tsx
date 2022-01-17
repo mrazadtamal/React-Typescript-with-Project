@@ -23,16 +23,18 @@ const App: React.FC = () => {
   console.log(todos);
 
   return (
-    <div className="App">
-      <div className="header">AZAD TODO</div>
-      <InputFile todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-      <TodoList
-        todos={todos}
-        setTodos={setTodos}
-        CompletedTodos={CompletedTodos}
-        setCompletedTodos={setCompletedTodos}
-      />
-    </div>
+    <DragDropContext onDragEnd={onDragEnd}>
+      <div className="App">
+        <div className="header">AZAD TODO</div>
+        <InputFile todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+        <TodoList
+          todos={todos}
+          setTodos={setTodos}
+          CompletedTodos={CompletedTodos}
+          setCompletedTodos={setCompletedTodos}
+        />
+      </div>
+    </DragDropContext>
   );
 };
 
