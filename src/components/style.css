@@ -60,9 +60,12 @@
   color: #fff;
 }
 
-.todoHeading {
-  font-size: 30px;
+.todosHeading {
+  font-size: 25px;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .todoSingle {
   display: flex;
