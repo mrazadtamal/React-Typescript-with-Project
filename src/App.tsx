@@ -2,25 +2,60 @@ import React, { useState } from "react";
 import "./App.css";
 import InputFile from "./components/InputFile";
 import TodoList from "./components/TodoList";
+import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import { Todo } from "./model";
 
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("");
-
-  const [todos, setTodos] = useState<Todo[]>([]);
-
+  const [todos, setTodos] = useState<Array<Todo>>([]);
   const [CompletedTodos, setCompletedTodos] = useState<Array<Todo>>([]);
 
   const handleAdd = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (todo) {
-      setTodos([...todos, { id: Date.now(), todo: todo, isDone: false }]);
+      setTodos([...todos, { id: Date.now(), todo, isDone: false }]);
       setTodo("");
     }
   };
 
-  console.log(todos);
+  const onDragEnd = (result: DropResult) => {
+    const { destination, source } = result;
+
+    console.log(result);
+
+    if (!destination) {
+      return;
+    }
+
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
+      return;
+    }
+
+    let add;
+    let active = todos;
+    let complete = CompletedTodos;
+
+    if (source.droppableId === "TodosList") {
+      add = active[source.index];
+      active.splice(source.index, 1);
+    } else {
+      add = complete[source.index];
+      complete.splice(source.index, 1);
+    }
+
+    if (destination.droppableId === "TodosList") {
+      active.splice(destination.index, 0, add);
+    } else {
+      complete.splice(destination.index, 0, add);
+    }
+
+    setCompletedTodos(complete);
+    setTodos(active);
+  };
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
